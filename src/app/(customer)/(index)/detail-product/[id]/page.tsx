@@ -3,16 +3,16 @@ import Navbar from '@/components/navbar'
 import CarouseImages from '@/components/(index)/detail-product/carousel-images'
 import ListProducts from '@/components/(index)/list-products'
 import PriceInfo from '@/components/(index)/detail-product/price-info'
-import { Tparams } from '@/types'
+// import { Tparams } from '@/types'
 import { getProductById } from './lib/data'
 import { redirect } from 'next/navigation'
 import { getUser } from '@/lib/auth'
 
-interface DetailProductProp {
-  params: Tparams;
-}
+// interface DetailProductProp {
+//   params: Tparams;
+// }
 
-export default async function DetailProductPage({ params }: DetailProductProp) {
+export default async function DetailProductPage({ params }: { params: { id: string } }) {
   const { session } = await getUser()
   const product = await getProductById(Number.parseInt(params.id))
 
