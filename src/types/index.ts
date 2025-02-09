@@ -5,14 +5,9 @@ export type ActionResult = {
 export type IBrand = {
   name: string
 }
-// export type Tparams = {
-//   id: string;
-// }
 export type Tparams = {
-  params: {
-    id: string;
-  };
-};
+  id: string;
+}
 
 export type TEdit = {
   params: Tparams;

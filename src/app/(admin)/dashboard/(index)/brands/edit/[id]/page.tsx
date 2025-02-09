@@ -1,9 +1,15 @@
 import FormBrand from "@/components/(index)/brands/form-brand";
 import { getBrandById } from "../../lib/data";
 import { redirect } from "next/navigation";
+import { TEdit } from "@/types";
 
-export default async function BrandPage({ params }: { params: { id: string } }) {
-  const brand = await getBrandById(params.id);
+export default async function EditPage({ params }: TEdit) {
+  // Await params before accessing its properties
+  const resolvedParams = await params;
+
+  console.log("Resolved Params:", resolvedParams); // Debugging
+
+  const brand = await getBrandById(resolvedParams.id);
 
   if (!brand) {
     redirect("/dashboard/brands");
