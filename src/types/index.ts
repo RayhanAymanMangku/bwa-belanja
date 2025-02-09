@@ -6,13 +6,13 @@ export type IBrand = {
   name: string
 }
 export type Tparams = {
-  id: number;
+  id: string
 }
+
 
 export type TEdit = {
-  params: Tparams;
-}
-
+  params: Tparams | Promise<Tparams>;
+};
 
 export type TProduct = {
   id: number

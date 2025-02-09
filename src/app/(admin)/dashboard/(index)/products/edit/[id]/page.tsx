@@ -20,7 +20,9 @@ import { redirect } from 'next/navigation';
 
 
 export default async function EditPage({ params }: TEdit) {
-  const product = await getProductById(Number.parseInt(params.id))
+  const resolvedParams = await params;
+
+  const product = await getProductById(Number.parseInt(resolvedParams.id))
   const brands = await getBrands()
   const categories = await getCategories()
   const locations = await getLocations()

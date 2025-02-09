@@ -6,7 +6,9 @@ import { TEdit } from '@/types';
 
 
 export default async function EditPage({ params }: TEdit) {
-  const data = await getCategoryById(params.id);
+  const resolvedParams = await params;
+
+  const data = await getCategoryById(resolvedParams.id);
 
   if (!data) {
     return redirect('/dashboard/locations');
