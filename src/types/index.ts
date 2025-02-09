@@ -6,7 +6,7 @@ export type IBrand = {
   name: string
 }
 export type Tparams = {
-  id: string;
+  id: number;
 }
 
 export type TEdit = {
