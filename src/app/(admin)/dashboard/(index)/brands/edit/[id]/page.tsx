@@ -1,9 +1,14 @@
 import FormBrand from "@/components/(index)/brands/form-brand";
-// import { TEdit } from "@/types";
 import { getBrandById } from "../../lib/data";
 import { redirect } from "next/navigation";
 
-export default async function BrandPage({ params }: { params: { id: string } }) {
+interface BrandPageProps {
+  params: {
+    id: string;
+  };
+}
+
+export default async function BrandPage({ params }: BrandPageProps) {
   const brand = await getBrandById(params.id);
 
   if (!brand) {
