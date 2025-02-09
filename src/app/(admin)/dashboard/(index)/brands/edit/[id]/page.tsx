@@ -5,7 +5,7 @@ import { TEdit } from "@/types";
 
 export default async function EditPage({ params }: TEdit) {
   // Await params before accessing its properties
-  const resolvedParams = await params;
+  const resolvedParams = params;
 
   console.log("Resolved Params:", resolvedParams); // Debugging
 
